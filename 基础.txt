@@ -1,0 +1,66 @@
+工作流程。
+	创建仓库
+		1 A在本地创建仓库。初始化git init，提交仓库到远程，
+		2将B开发者邀请进入仓库的合作中
+		3B下载仓库代码到B的本地  git clone
+		4,B提交代码
+		5冲突，把代码下载，解决，再提交A， 提交B
+
+	GIT先报ID
+		$ git config --global user.name #你是谁
+		$ git config --global user.email #怎么联系你
+		
+
+		git inint  初始化
+		git add .将所有的加到暂存区
+		git commit -m 添加到版本库
+		建立链接，
+		git push add origin ‘远程仓库地址’
+		将内容上传到
+		git push -u  orgin master
+		复制仓库地址
+			组员git clone 仓库地址  克隆过来的不全，切换目录compoer install补全  修改，添加到工作区，版本库，创建分支，查看状态  没问题 将所有的传输到远程
+
+
+		客户端的代码管理，工作区和版本区，
+			1.GIT add 把文件修改添加至暂存区
+			2GIT commit 更改提交把所有暂存区的内容提交到分支master分区
+
+	查看远程仓库	git remote     查看仓库地址 fit remote -v
+	删除远程库 git remote remove  远程库名
+	修改远程库名 fit remote rename 旧  新
+
+
+	关联 git remote add  库名 https//github.com/用户名/文件名
+	推送到远程上 git push  -u 苦命  master
+
+
+	添加成员到写作组
+		如何不填写账号密码
+			生成ssh密钥   linx   cd ~/.ssh    windows user/用户/
+		ssh-keygen -t rsa -c "注释"生成密钥      
+		打开公钥 id_ras.pub  全部复制 -》GIT服务器-》SETTING-》ssh-》title->黏贴
+	
+	版本回退，修改错误了。可以恢复指定的版本  
+		git log 查看项目的日志
+	git reset --hard 版本号
+
+
+
+	分支  
+		创建分支，分支commit   master不会变.
+		 遇到紧急BUG 创建另外一个新的分支，修改后，合并到MASTER
+		可以再切到之前的分支上，接着开发
+		
+		git branch 查看所有分支
+		git branch dev  创建DEV分支
+		
+		切换分支  git chekout dev
+
+
+		提交
+		git add 文件
+		git commit -m "注释"   //这里是添加到工作区，提交到版本库
+		合并分支
+		切换一下分支 
+		git merge 需要合并的分支
